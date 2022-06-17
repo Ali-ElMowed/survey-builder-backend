@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("survey_id")->constrained("survies")->uniqid();
-            $table->foreignId("question_type")->constrained("question_types")->uniqid();
-            $table->string("question_content");
+            $table->integer('survey_id')->unique();
+            $table->integer('question_type_id')->unique();
+            $table->string('question_content');
             $table->timestamps();
         });
     }
