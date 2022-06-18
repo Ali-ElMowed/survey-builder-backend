@@ -25,3 +25,10 @@ Route::delete("/delete_question/{id}",[questionController::class, 'destroyQues']
 Route::post("/update_question/{id}",[questionController::class, 'updateQues']);
 
 Route::get("/get_survey_questions/{id}",[surveyController::class,'getQuestions']);
+Route::post("/add_survey",[surveyController::class, 'addSurvey']);
+Route::post("/delete_survey/{id}",[surveyController::class, 'destroySurvey']);
+Route::post("/update_survey/{id}",[surveyController::class, 'updateSurvey']);
+
+
+
+
