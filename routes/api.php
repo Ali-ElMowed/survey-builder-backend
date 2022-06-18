@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\questionController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;   
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post("/add_question",[questionController::class, 'addQues']);
+Route::delete("/delete_question/{id}",[questionController::class, 'destroyQues']);
+Route::post("/update_question/{id}",[questionController::class, 'updateQues']);
