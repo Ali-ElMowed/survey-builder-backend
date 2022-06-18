@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\questionController;
+use App\Http\Controllers\surveyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;   
 
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("/add_question",[questionController::class, 'addQues']);
 Route::delete("/delete_question/{id}",[questionController::class, 'destroyQues']);
 Route::post("/update_question/{id}",[questionController::class, 'updateQues']);
+
+Route::get("/get_survey_questions/{id}",[surveyController::class,'getQuestions']);

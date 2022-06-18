@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+//name is survie not survey to laravel understand
 class survie extends Model
 {
     use HasFactory;
