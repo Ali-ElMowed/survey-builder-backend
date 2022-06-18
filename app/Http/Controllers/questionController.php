@@ -62,6 +62,13 @@ class questionController extends Controller
         }
     }
 
+    //function to get the answer of the targted question
+    public function getAnswers($id){
+
+        $question = question::where('id',$id)->with('answer')->get();
+        return self:: returnResponse("succes",200, $question);
+    }
+
 
     //function to be used in all functions for response return
     public function returnResponse($status, $code, $data = null)
