@@ -69,6 +69,13 @@ class questionController extends Controller
         return self:: returnResponse("succes",200, $question);
     }
 
+    //function to the question choices
+    public function getQuestionChoices($id){
+
+        $question = question::where('id',$id)->with("choice")->get();
+        return $question;
+    }
+
 
     //function to be used in all functions for response return
     public function returnResponse($status, $code, $data = null)

@@ -36,6 +36,7 @@ Route::post("/add_question",[questionController::class, 'addQues']);
 Route::delete("/delete_question/{id}",[questionController::class, 'destroyQues']);
 Route::post("/update_question/{id}",[questionController::class, 'updateQues']);
 Route::get("/get_answers/{id}",[questionController::class,'getAnswers']);
+Route::get("/get_choices/{id}",[questionController::class,'getQuestionChoices']);
 
 //survey apis
 Route::get("/get_survey_questions/{id}",[surveyController::class,'getQuestions']);
