@@ -5,6 +5,7 @@ use App\Http\Controllers\questionController;
 use App\Http\Controllers\surveyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;   
+use App\Http\Controllers\JWTController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::group(['middleware' => 'api'], function($router) {
+    Route::post('/register', [JWTController::class, 'register']);
+    Route::post('/login', [JWTController::class, 'login']);
+    Route::post('/logout', [JWTController::class, 'logout']);
+    Route::post('/refresh', [JWTController::class, 'refresh']);
+    Route::post('/profile', [JWTController::class, 'profile']);
+});
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
