@@ -11,4 +11,10 @@ class question extends Model
     public function answer(){
         return $this->hasMany(answer::class,'question_id');
     }
+
+    public function choice(){
+        return $this->hasMany(choice::class,'question_id');
+    }
 }
+
+

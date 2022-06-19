@@ -13,4 +13,8 @@ class survie extends Model
     public function question(){
         return $this->hasMany(question::class,"survey_id");
     }
+
+    public function choice(){
+        return $this->hasManyThrough(choice::class,question::class);
+    }
 }
