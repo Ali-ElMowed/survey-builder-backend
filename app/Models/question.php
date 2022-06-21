@@ -12,7 +12,7 @@ class question extends Model
         return $this->hasMany(answer::class,'question_id');
     }
 
-    public function choice(){
+    public function choices(){
         return $this->hasMany(choice::class,'question_id');
     }
 }
