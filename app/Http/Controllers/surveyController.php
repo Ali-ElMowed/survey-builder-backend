@@ -50,7 +50,7 @@ class surveyController extends Controller
     //function for getting all the questions that are related to the survey with this id
     public function getQuestions($id){
 
-        $survey = survie::where('id',$id)->with('question')->get();
+        $survey = survie::where('id',$id)->with('questions')->get();
         return self::returnResponse('success',200,$survey);
 
     }

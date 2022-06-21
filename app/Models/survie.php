@@ -10,7 +10,7 @@ class survie extends Model
 {
     use HasFactory;
 
-    public function question(){
+    public function questions(){
         return $this->hasMany(question::class,"survey_id");
     }
 
